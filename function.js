@@ -1,5 +1,5 @@
 
-window.function = function (data, qtl, delimiter) {
+window.function = async function (data, qtl, delimiter) {
   
   const math = await import("https://cdn.skypack.dev/mathjs");
   
