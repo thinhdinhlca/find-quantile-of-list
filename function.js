@@ -9,6 +9,6 @@ window.function = function (data, qtl, delimiter) {
   
   var arr = data.split(delimiter);
   
-  return mathjs.evaluate(quantileSeq(arr, qtl, false));
+  return math.evaluate(quantileSeq(arr, qtl, false));
 
 }
