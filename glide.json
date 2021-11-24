@@ -1,9 +1,9 @@
 [
   {
     "kind": "column",
-    "name": "Joined list - Sort by keys descendingly",
-    "description": "Sort Joined List by secondary joined list - descendingly",
-    "author": "Darren Murphy",
+    "name": "Find nth quantile of a list of numbers",
+    "description": "",
+    "author": "Thinh Dinh <thinh@lowcode.agency>",
     "params": [
       {
         "name": "data",
@@ -11,23 +11,13 @@
         "type": "string"
       },
       {
-        "name": "sort_keys",
-        "displayName": "Joined List - sort keys",
-        "type": "string"
-      },
-      {
-        "name": "delimiter",
-        "displayName": "String delimiter",
-        "type": "string"
-      },
-      {
-        "name": "final_delimiter",
-        "displayName": "Result delimiter",
-        "type": "string"
+        "name": "quantile",
+        "displayName": "nth Quantile (e.g: 25)",
+        "type": "number"
       }
     ],
     "result": {
-      "type": "string"
+      "type": "number"
     }
   }
 ]
