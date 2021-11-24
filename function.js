@@ -7,7 +7,7 @@ window.function = function (data, qtl, delimiter) {
   qtl = qtl.value ?? "";
   delimiter = delimiter.value ?? ", ";
   
-  var arr = data.split(delimiter);
+  var arr = data.value.split(delimiter);
   
   return math.evaluate(quantileSeq(arr, qtl, false));
 
