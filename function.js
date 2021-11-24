@@ -1,22 +1,39 @@
 
-window.function = function (data, sort_keys, delimiter, final_delimiter) {
-  if (data.value === undefined) return undefined;
-  if (sort_keys.value === undefined) return undefined;
+window.function = function (data, qtl, delimiter) {
   
-  delimiter = delimiter.value ?? ',';
-  final_delimiter = final_delimiter.value ?? "\n";
+  data = data.value ?? "";
+  qtl = qtl.value ?? "";
+  delimiter = delimiter.value ?? ", ";
 
-  var data_arr = data.value.split(delimiter);
-  var keys_arr = sort_keys.value.split(delimiter);
-  var obj = {};
-  for (i=0; i<data_arr.length; i++) {
-    obj[data_arr[i]] = keys_arr[i];
-  }
+  arr = data.split(delimiter);
+  
+// sort array ascending
+const asc = arr => arr.sort((a, b) => a - b);
 
-  var sorted = Object.keys(obj).sort(function(a,b){return obj[b]-obj[a]});
+const sum = arr => arr.reduce((a, b) => a + b, 0);
 
-  var joined = sorted.join(final_delimiter);
+const mean = arr => sum(arr) / arr.length;
 
-  return joined;
+// sample standard deviation
+const std = (arr) => {
+    const mu = mean(arr);
+    const diffArr = arr.map(a => (a - mu) ** 2);
+    return Math.sqrt(sum(diffArr) / (arr.length - 1));
+};
+
+const quantile = (arr, q) => {
+    const sorted = asc(arr);
+    const pos = (sorted.length - 1) * q;
+    const base = Math.floor(pos);
+    const rest = pos - base;
+    if (sorted[base + 1] !== undefined) {
+        return sorted[base] + rest * (sorted[base + 1] - sorted[base]);
+    } else {
+        return sorted[base];
+    }
+};
+
+const result = arr => quantile(arr, qtl);
+return result;
 
 }
