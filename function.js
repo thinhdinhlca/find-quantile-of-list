@@ -13,7 +13,7 @@ window.function = function (data, sort_keys, delimiter, final_delimiter) {
     obj[data_arr[i]] = keys_arr[i];
   }
 
-  var sorted = Object.keys(obj).sort(function(a,b){return obj[a]-obj[b]});
+  var sorted = Object.keys(obj).sort(function(a,b){return obj[b]-obj[a]});
 
   var joined = sorted.join(final_delimiter);
 
