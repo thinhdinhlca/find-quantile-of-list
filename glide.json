@@ -1,7 +1,7 @@
 [
   {
     "kind": "column",
-    "name": "joined-list-sort-by-keys",
+    "name": "Joined list - Sort by keys descendingly",
     "description": "Sort Joined List by secondary joined list - descendingly",
     "author": "Darren Murphy",
     "params": [
