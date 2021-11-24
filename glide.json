@@ -11,9 +11,14 @@
         "type": "string"
       },
       {
-        "name": "quantile",
-        "displayName": "nth Quantile (e.g: 25)",
+        "name": "qtl",
+        "displayName": "nth Quantile (e.g: 0.25)",
         "type": "number"
+      },
+      {
+        "name": "delimiter",
+        "displayName": "Delimiter (default to comma)",
+        "type": "string"
       }
     ],
     "result": {
