@@ -3,12 +3,13 @@ window.function = function (data, qtl, delimiter) {
   
   const math = await import("https://cdn.skypack.dev/mathjs");
   
-  data = data.value ?? "";
+  if (data.value === undefined) return undefined;
+  
   qtl = qtl.value ?? "";
   delimiter = delimiter.value ?? ", ";
   
   var arr = data.value.split(delimiter);
   
-  return math.evaluate(quantileSeq(arr, qtl, false));
+  return math.quantileSeq(arr, qtl, false);
 
 }
