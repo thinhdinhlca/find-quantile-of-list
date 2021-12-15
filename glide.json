@@ -2,7 +2,7 @@
   {
     "kind": "column",
     "name": "Find nth quantile of a list of numbers",
-    "description": "",
+    "description": "By Thinh Dinh <thinh@lowcode.agency>",
     "author": "Thinh Dinh <thinh@lowcode.agency>",
     "params": [
       {
